@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AppDispositivos</string>
     <string name="action_settings">Settings</string>
+    <string name="add_note"> Adicionar nota</string>
+    <string name="add_titleNote"> Título</string>
+    <string name="add_description">Descrição</string>
 </resources>
