@@ -57,13 +57,12 @@ public class NewTask extends AppCompatActivity {
         CardView cardView;
 
         //Passando title pro card.
-        EditText get_text_titulo = view.findViewById(R.id.text_titulo);
-        card.setTitle(get_text_titulo.toString());
+        final EditText editTextTitulo = (EditText) findViewById(R.id.text_titulo);
+        card.setTitle(editTextTitulo.getText().toString());
 
         //Passando description pro card
-        EditText get_description = view.findViewById(R.id.text_description);
-        card.setText(get_description.toString());
-
+        EditText editTextDescription = (EditText) findViewById(R.id.text_description);
+        card.setText(editTextDescription.getText().toString());
 
         listCard.add(card); //NO FINAL DE TUDO ADICIONA O CARD NO VETOR
 
