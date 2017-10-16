@@ -54,7 +54,7 @@ public class NewTask extends AppCompatActivity {
 
         Card card = new Card();
 
-        //Passando title pro card
+        //Passando title pro card.
         EditText get_text_titulo = view.findViewById(R.id.text_titulo);
         card.setTitle(get_text_titulo.toString());
 
