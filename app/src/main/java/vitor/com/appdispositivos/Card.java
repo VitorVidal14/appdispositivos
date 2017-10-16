@@ -33,12 +33,12 @@ public class Card{
         this.fav = false;
         this.cal = Calendar.getInstance(); // Requires minimum API level 24
 
-        this.dayOfCreation = cal.DAY_OF_MONTH;
-        this.monthOfCreation=cal.MONTH;
-        this.yearOfCreation=cal.YEAR;
-        this.hourOfCreation=cal.HOUR;
-        this.minuteOfCreation=cal.MINUTE;
-        this.secondOfCreation=cal.SECOND;
+        this.dayOfCreation = cal.get(Calendar.DAY_OF_MONTH);
+        this.monthOfCreation=cal.get(Calendar.MONTH);
+        this.yearOfCreation=cal.get(Calendar.YEAR);
+        this.hourOfCreation=cal.get(Calendar.HOUR);
+        this.minuteOfCreation=cal.get(Calendar.MINUTE);
+        this.secondOfCreation=cal.get(Calendar.SECOND);
 
 
     }
