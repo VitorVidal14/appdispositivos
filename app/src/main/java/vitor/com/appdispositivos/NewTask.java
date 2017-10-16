@@ -5,6 +5,7 @@ import android.icu.util.Calendar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -53,6 +54,7 @@ public class NewTask extends AppCompatActivity {
     public void acao (View view){
 
         Card card = new Card();
+        CardView cardView;
 
         //Passando title pro card.
         EditText get_text_titulo = view.findViewById(R.id.text_titulo);
