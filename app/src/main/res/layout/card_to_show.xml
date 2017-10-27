@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    xml que define a implementação do card para a tela principal do app. Essa implementação não possui os
+     botões de organização e a definição de prioridades.
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical">
+    <!--
+        Define a orientação do LinearLayout como vertical e o padding como 16 pixels de densidade.
+    -->
 
     <android.support.v7.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
+        <!--
+            Definição de um id para o CardView possibilitando referencia-lo nos arquivos Java;
+             Define a gravity como center.
+        -->
 
         <LinearLayout
             android:orientation="vertical"
-
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -25,8 +36,10 @@
                 android:hint="Titulo"
                 android:textStyle="bold"
                 android:padding="4dp"/>
+            <!--
+                TextView para mostrar o titulo da tarefa no card.
+            -->
 
-            <!-- TextView para armazenar o descrição do card. -->
             <TextView
                 android:id="@+id/text_description"
                 android:layout_width="wrap_content"
@@ -34,9 +47,16 @@
                 android:layout_below="@+id/text_titulo"
                 android:hint="Descrição"
                 android:padding="4dp"/>
-
+            <!--
+                TextView para mostrar a descrição da tarefa no card.
+            -->
 
         </LinearLayout>
+        <!--
+            Todo(1) - Verificar se o LinearLayout acima funciona corretamente e se a implementação é eficiente.
+            Todo(2) - Comparar as implementações de cardViews e tentar definir um padrão correto.
+            Todo(3) - Estabelecer a conecção da criação da nova nota, do Adapter/ViewHolder relacionada ao card e a aba referente ao dia.
+        -->
 
     </android.support.v7.widget.CardView>
 </LinearLayout>

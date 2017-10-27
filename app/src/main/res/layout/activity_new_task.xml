@@ -7,24 +7,36 @@
     tools:context="vitor.com.appdispositivos.NewTask"
     android:orientation="vertical"
     android:padding="16dp">
+    <!--
+        android:orientation Sets the layout orientation to vertical.
+         padding defines a margin for the layout elements.
+    -->
 
     <EditText
         android:id="@+id/text_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/title" />
+    <!--
+        Campo para o usuário preencher o título da nova nota.
+    -->
 
     <EditText
         android:id="@+id/text_description"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:hint="@string/message"
         android:gravity="start"/>
+    <!--
+        Campo para o usuário preencher a descrição da nova nota.
+    -->
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <!--
+            O RelativeLayout é necessário para colocar o botão de concluir na posição desejada da tela.
+        -->
 
         <Button
             android:id="@+id/buttn_ok"
@@ -33,6 +45,9 @@
             android:text = "@string/ok"
             android:layout_alignParentRight="true"
             android:onClick="acao"/>
+            <!--
+                O botão é usado para finalizar o processo de criação de uma nova nota.
+            -->
 
     </RelativeLayout>
 

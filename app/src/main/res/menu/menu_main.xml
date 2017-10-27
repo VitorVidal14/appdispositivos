@@ -1,4 +1,5 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="vitor.com.appdispositivos.MainActivity">
@@ -8,3 +9,8 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
 </menu>
+    <!--
+        Define o xml como parte da MainActivity.
+        Define o item settings do menu.
+        app:showAsAction="never" define que o menu não será sem haver input do usuário.
+    -->

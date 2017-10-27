@@ -2,10 +2,6 @@ package vitor.com.appdispositivos;
 
 import android.icu.util.Calendar;
 
-/**
- * Created by saviolage on 16/10/17.
- */
-
 public class Card{
 
     //VALORES BASE

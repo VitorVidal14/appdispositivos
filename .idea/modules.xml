@@ -3,12 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AppDispositivos2.iml" filepath="$PROJECT_DIR$/AppDispositivos2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app-app.iml" filepath="$PROJECT_DIR$/app/app-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/appdispositivos.iml" filepath="$PROJECT_DIR$/appdispositivos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hugs.iml" filepath="$PROJECT_DIR$/hugs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ztd.iml" filepath="$PROJECT_DIR$/ztd.iml" />
     </modules>
   </component>
 </project>

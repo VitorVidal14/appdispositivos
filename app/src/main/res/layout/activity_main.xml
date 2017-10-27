@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+        CoordinatorLayout is intended for two primary use cases:
+            As a top-level application decor or chrome layout
+            As a container for a specific interaction with one or more child views
+
+        By specifying Behaviors for child views of a CoordinatorLayout you can provide many different
+         interactions within a single parent and those views can also interact with one another.
+         View classes can specify a default behavior when used as a child of a CoordinatorLayout using
+          the DefaultBehavior annotation.
+
+        Behaviors may be used to implement a variety of interactions and additional layout modifications
+         ranging from sliding drawers and panels to swipe-dismissable elements and buttons that
+         stick to other elements as they move and animate.
+
+        Children of a CoordinatorLayout may have an anchor. This view id must correspond to an arbitrary
+         descendant of the CoordinatorLayout, but it may not be the anchored child itself or a
+         descendant of the anchored child. This can be used to place floating views relative to other arbitrary
+          content panes.
+
+        Children can specify insetEdge to describe how the view insets the CoordinatorLayout. Any child views
+         which are set to dodge the same inset edges by dodgeInsetEdges will be moved appropriately so that
+          the views do not overlap.
+    -->
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_content"
@@ -7,12 +32,19 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="vitor.com.appdispositivos.MainActivity">
+    <!--
+        width and height define the screenSpace reserved for the layout/widget.
+    -->
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
+        <!--
+            O id é especificado para referenciar a AppBarLayout nos arquivos Java.
+            AppTheme define o tema do AppBarLayout.
+        -->
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,13 +53,18 @@
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay">
-
+            <!--
+                layout_scrollFlags define que a Toolbar possui scroll na horizontal
+            -->
         </android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <!--
+            Define a TabLayout
+        -->
 
     </android.support.design.widget.AppBarLayout>
 
@@ -36,6 +73,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <!--
+        Layout manager that allows the user to flip left and right through pages of data. You supply an
+         implementation of a PagerAdapter to generate the pages that the view shows.
+    -->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -45,5 +86,8 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_input_add"
         android:tint="#ffffff"/>
+    <!--
+        Creates a floating action button
+    -->
 
 </android.support.design.widget.CoordinatorLayout>
