@@ -1,5 +1,7 @@
 package vitor.com.appdispositivos;
 
+//Todo(9) - Comentar este arquivo .java.
+
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

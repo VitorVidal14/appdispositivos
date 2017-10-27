@@ -23,7 +23,7 @@ public class Card{
     private double milisecond; //PARA COMPARAR QUAL CARD MAIS RECENTE
 
 
-    public Card (){ // bob, the builder
+    public Card (){
         this.title = "";
         this.text = "";
         this.fav = false;

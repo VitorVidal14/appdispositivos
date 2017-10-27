@@ -1,5 +1,6 @@
 package vitor.com.appdispositivos;
 
+// Classe para implementar as funcionalidades do menu Settings
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -29,6 +30,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
      * to reflect its new value.
      */
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
+//        Instancia do listener.
+
         @Override
         public boolean onPreferenceChange(Preference preference, Object value) {
             String stringValue = value.toString();
@@ -40,10 +43,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                 int index = listPreference.findIndexOfValue(stringValue);
 
                 // Set the summary to reflect the new value.
-                preference.setSummary(
-                        index >= 0
-                                ? listPreference.getEntries()[index]
-                                : null);
+                preference.setSummary(index >= 0 ? listPreference.getEntries()[index] : null);
 
             } else if (preference instanceof RingtonePreference) {
                 // For ringtone preferences, look up the correct display value
@@ -75,15 +75,17 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             return true;
         }
     };
+//    Função para setar as preferencias do menu Settings.
+
 
     /**
      * Helper method to determine if the device has an extra-large screen. For
      * example, 10" tablets are extra-large.
      */
     private static boolean isXLargeTablet(Context context) {
-        return (context.getResources().getConfiguration().screenLayout
-                & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_XLARGE;
+        return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_XLARGE;
     }
+//    Muda a definição do design caso o dispositivo tenha uma tela muito grande.
 
     /**
      * Binds a preference's summary to its value. More specifically, when the
@@ -100,10 +102,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
         // Trigger the listener immediately with the preference's
         // current value.
-        sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
-                PreferenceManager
-                        .getDefaultSharedPreferences(preference.getContext())
-                        .getString(preference.getKey(), ""));
+        sBindPreferenceSummaryToValueListener.onPreferenceChange(preference, PreferenceManager.getDefaultSharedPreferences(preference.getContext()).getString(preference.getKey(), ""));
     }
 
     @Override
@@ -111,6 +110,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         super.onCreate(savedInstanceState);
         setupActionBar();
     }
+//    Criação do botão na tela.
 
     /**
      * Set up the {@link android.app.ActionBar}, if the API is available.
@@ -122,6 +122,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
+//    Função para definir o link entre as activitys.
 
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
@@ -134,6 +135,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         }
         return super.onMenuItemSelected(featureId, item);
     }
+//    Todo(6) - Definir a funcionalidade deste método.
 
     /**
      * {@inheritDoc}
@@ -142,6 +144,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     public boolean onIsMultiPane() {
         return isXLargeTablet(this);
     }
+//    Outra função relacionada a resolver o problema de disposição dos elementos em uma tela muito grande
 
     /**
      * {@inheritDoc}
@@ -151,17 +154,17 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     public void onBuildHeaders(List<Header> target) {
         loadHeadersFromResource(R.xml.pref_headers, target);
     }
+//    Todo(7) - Definir a funcionalidade deste método.
 
     /**
      * This method stops fragment injection in malicious applications.
      * Make sure to deny any unknown fragments here.
      */
     protected boolean isValidFragment(String fragmentName) {
-        return PreferenceFragment.class.getName().equals(fragmentName)
-                || GeneralPreferenceFragment.class.getName().equals(fragmentName)
-                || DataSyncPreferenceFragment.class.getName().equals(fragmentName)
+        return PreferenceFragment.class.getName().equals(fragmentName) || GeneralPreferenceFragment.class.getName().equals(fragmentName) || DataSyncPreferenceFragment.class.getName().equals(fragmentName)
                 || NotificationPreferenceFragment.class.getName().equals(fragmentName);
     }
+//    Protege o aplicativo de fragments inválidos.
 
     /**
      * This fragment shows general preferences only. It is used when the
@@ -193,6 +196,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             return super.onOptionsItemSelected(item);
         }
     }
+//    Implementação das preferencias do app.
 
     /**
      * This fragment shows notification preferences only. It is used when the
@@ -212,6 +216,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
         }
+//        Mostra as notificações de preferência.
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {

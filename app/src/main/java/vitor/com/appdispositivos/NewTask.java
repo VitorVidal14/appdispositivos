@@ -21,17 +21,13 @@ public class NewTask extends AppCompatActivity {
     ArrayList<Card> listCard;
 
 
-    public NewTask (){
-        listCard = new ArrayList<Card>();
-
-    }
+    public NewTask (){ listCard = new ArrayList<Card>(); }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_task);
         setupActionBar();
-
     }
 
     private void setupActionBar() {
@@ -68,6 +64,7 @@ public class NewTask extends AppCompatActivity {
 
         //FINALIZA A FUNÇÃO E RETORNA A TELA INICIAL
         finish();
+//      Todo (8) - Verificar se o finish() funciona corretamente.
     }
 }
 

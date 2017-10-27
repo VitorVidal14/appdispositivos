@@ -22,24 +22,31 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
+//    Definição de variável para o menu.
 
     private ViewPager mViewPager;
+//
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        Instância da activity_maain como tela principal do programa.
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+//        Intância da Toolbar.
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+//        Instãocia do menu Settings.
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+//        Instãncia do menu Settings.
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+//        Instância das Tabs do layout principal.
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,NewTask.class));}
         });
+//        Instância do FAB.
 
     }
 
@@ -55,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+//    Inflate imprime o menu Settings na tela.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -62,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {startActivity(new Intent(MainActivity.this,SettingsActivity.class));}
         return super.onOptionsItemSelected(item);
     }
+//    Função para definir a relação das activitys main e settings.
 
     public static class PlaceholderFragment extends Fragment {
 
@@ -85,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             return rootView;
         }
     }
+//    Todo(10) - Definir a funcionalidade da função acima.
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -108,4 +119,5 @@ public class MainActivity extends AppCompatActivity {
             }return null;
         }
     }
+//    Funcção para definir o menu de abas.
 }
