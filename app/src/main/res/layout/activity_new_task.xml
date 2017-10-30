@@ -17,9 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/title" />
-    <!--
-        Campo para o usuário preencher o título da nova nota.
-    -->
+    <!--Campo para o usuário preencher o título da nova nota.-->
 
     <EditText
         android:id="@+id/text_description"
@@ -27,16 +25,12 @@
         android:layout_height="wrap_content"
         android:hint="@string/message"
         android:gravity="start"/>
-    <!--
-        Campo para o usuário preencher a descrição da nova nota.
-    -->
+    <!--Campo para o usuário preencher a descrição da nova nota.-->
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <!--
-            O RelativeLayout é necessário para colocar o botão de concluir na posição desejada da tela.
-        -->
+        <!--O RelativeLayout é necessário para colocar o botão de concluir na posição desejada da tela.-->
 
         <Button
             android:id="@+id/buttn_ok"
@@ -45,9 +39,7 @@
             android:text = "@string/ok"
             android:layout_alignParentRight="true"
             android:onClick="acao"/>
-            <!--
-                O botão é usado para finalizar o processo de criação de uma nova nota.
-            -->
+            <!--O botão é usado para finalizar o processo de criação de uma nova nota.-->
 
     </RelativeLayout>
 

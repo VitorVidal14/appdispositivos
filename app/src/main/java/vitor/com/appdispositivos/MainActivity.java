@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -22,10 +24,18 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
-//    Definição de variável para o menu.
 
     private ViewPager mViewPager;
-//
+
+    private RecyclerView mCardsLists;
+    private CardAdapter mAdapter;
+
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +48,24 @@ public class MainActivity extends AppCompatActivity {
 //        Intância da Toolbar.
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-//        Instãocia do menu Settings.
-
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 //        Instãncia do menu Settings.
+
+
+        mCardsLists = (RecyclerView) findViewById(R.id.rv_titulo);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        mCardsLists.setLayoutManager(layoutManager);
+        mCardsLists.setHasFixedSize(true);
+        mAdapter = new CardAdapter(100);
+        mCardsLists.setAdapter(mAdapter);
+
+
+
+
+
+
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
@@ -95,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             return rootView;
         }
     }
-//    Todo(10) - Definir a funcionalidade da função acima.
+//    Todo(10) - Definir a funcionalidade do método acima.
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -116,8 +139,10 @@ public class MainActivity extends AppCompatActivity {
                     return "Semana";
                 case 2:
                     return "Mês";
+                case 3:
+                    return "Organização";
             }return null;
         }
     }
-//    Funcção para definir o menu de abas.
+//    Função para definir o menu de abas.
 }
