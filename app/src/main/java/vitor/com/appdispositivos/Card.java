@@ -2,7 +2,9 @@ package vitor.com.appdispositivos;
 
 import android.icu.util.Calendar;
 
-public class Card{
+import java.io.Serializable;
+
+public class Card implements Serializable{
 
     //VALORES BASE
     private String title;
