@@ -8,7 +8,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 
-/** Desgraca */
 /**
  * Created by aluno on 30/10/17.
  */
