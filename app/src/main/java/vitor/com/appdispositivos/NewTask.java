@@ -49,7 +49,7 @@ public class NewTask extends AppCompatActivity {
 
     public void acao (View view){
 
-        Card card = new Card();
+        Card card = new Card("","");
         CardView cardView;
 
         //Passando title pro card.
