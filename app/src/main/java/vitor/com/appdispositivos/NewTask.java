@@ -60,11 +60,15 @@ public class NewTask extends AppCompatActivity {
         final EditText editTextDescription = (EditText) findViewById(R.id.text_description);
         card.setText(editTextDescription.getText().toString());
 
+
         listCard.add(card); //NO FINAL DE TUDO ADICIONA O CARD NO VETOR
 
         //FINALIZA A FUNÇÃO E RETORNA A TELA INICIAL
         finish();
 //      Todo (8) - Verificar se o finish() funciona corretamente.
     }
+
+
+
 }
 

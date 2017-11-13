@@ -37,16 +37,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder>{
     }
 
     public CardAdapter(Context context, List<Card> cardsList) {
-        this.mContext = context;
-        this.cardList = cardsList;
+        mContext = context;
+        cardList = cardsList;
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType){
+    public CardAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType){
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_to_show, viewGroup, false);
         MyViewHolder viewHolder = new MyViewHolder(view);
 
-        return new MyViewHolder(view);
+        return  viewHolder;
     }
 
     @Override

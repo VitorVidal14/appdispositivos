@@ -34,7 +34,8 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            />
         <!--Define a TabLayout-->
 
     </android.support.design.widget.AppBarLayout>
@@ -59,7 +60,8 @@
         android:tint="#ffffff"/>
     <!--Creates a floating action button-->
 
-    <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rv_titulo"
         xmlns:android="http://schemas.android.com/apk/res/android" />

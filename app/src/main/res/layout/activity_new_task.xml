@@ -27,20 +27,4 @@
         android:gravity="start"/>
     <!--Campo para o usuário preencher a descrição da nova nota.-->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <!--O RelativeLayout é necessário para colocar o botão de concluir na posição desejada da tela.-->
-
-        <Button
-            android:id="@+id/buttn_ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text = "@string/ok"
-            android:layout_alignParentRight="true"
-            android:onClick="acao"/>
-            <!--O botão é usado para finalizar o processo de criação de uma nova nota.-->
-
-    </RelativeLayout>
-
 </LinearLayout>
