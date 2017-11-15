@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    xml que define a implementação do card para a tela principal do app. Essa implementação não possui os
+     botões de organização e a definição de prioridades.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical">
+    <!--Define a orientação do LinearLayout como vertical e o padding como 16 pixels de densidade.-->
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardCornerRadius="1dp"
+        android:elevation="3dp">
+        <!--
+            Definição de um id para o CardView possibilitando referencia-lo nos arquivos Java;
+             Define a gravity como center.
+        -->
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/titulo"
+                android:textStyle="bold"
+                android:padding="4dp"/>
+            <!--TextView para mostrar o titulo da tarefa no card.-->
+
+            <TextView
+                android:id="@+id/text_description"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/text_title"
+                android:layout_height="wrap_content"
+                android:hint="@string/descri_o"
+                android:padding="4dp"/>
+            <!--TextView para mostrar a descrição da tarefa no card.-->
+
+            <LinearLayout
+                android:layout_below="@id/text_description"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/button_dia"
+                    android:hint="@string/dia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/button_semana"
+                    android:hint="@string/semana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/button_mes"
+                    android:hint="@string/m_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

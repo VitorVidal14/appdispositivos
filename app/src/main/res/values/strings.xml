@@ -93,4 +93,9 @@
     <string name="two">Two</string>
     <string name="three">Three</string>
     <string name="four">Four</string>
+    <string name="dia">Dia</string>
+    <string name="descri_o">Descrição</string>
+    <string name="titulo">Titulo</string>
+    <string name="m_s">Mês</string>
+    <string name="semana">Semana</string>
 </resources>

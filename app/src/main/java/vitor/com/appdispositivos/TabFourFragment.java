@@ -21,7 +21,7 @@ public class TabFourFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        view = inflater.inflate(R.layout.card_to_show,container,false);
+        view = inflater.inflate(R.layout.card_organizar,container,false);
         return view;
     }
 }
