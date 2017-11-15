@@ -30,41 +30,44 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-    private ViewPager mViewPager;
-    private RecyclerView recyclerView;
-    private CardAdapter cardAdapter;
-    private List<Card> cardList;
+    ViewPager mViewPager;
+    RecyclerView recyclerView;
+    CardAdapter cardAdapter;
+    List<Card> cardList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Instância da activity_maain como tela principal do programa.
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        Intância da Toolbar.
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-//        Instãncia do menu Settings.
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        adapter.addFragment(new TabOneFragment(), "Dia");
+        adapter.addFragment(new TabTwoFragment(), "Semana");
+        adapter.addFragment(new TabThreeFragment(), "Mês");
+        adapter.addFragment(new TabFourFragment(), "Organizar");
+
+        mViewPager.setAdapter(adapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-//        Instância das Tabs do layout principal.
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_titulo);
 
         cardList = new ArrayList<>();
         cardAdapter = new CardAdapter(this, cardList);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(cardAdapter);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.setAdapter(cardAdapter);
 
         prepareCards();
 
@@ -85,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        // use the value.
                         card.setTitle(editTextTitulo.getText().toString());
                         card.setText(editTextDescription.getText().toString());
                         cardList.add(card);
@@ -95,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
                 alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        // cancel
                     }
                 });
 
@@ -103,15 +104,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-//        Instância do FAB.
-
 
         for (int i=0; i< cardList.size();i++)
             System.out.println("Titulo " + cardList.get(i).getTitle() + "\n Description: " + cardList.get(i).getText());
-
-
-
-
     }
 
     @Override
@@ -119,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-//    Inflate imprime o menu Settings na tela.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -127,11 +121,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {startActivity(new Intent(MainActivity.this,SettingsActivity.class));}
         return super.onOptionsItemSelected(item);
     }
-//    Função para definir a relação das activitys main e settings.
-
-
-
-
 
     public static class PlaceholderFragment extends Fragment {
 
@@ -154,42 +143,10 @@ public class MainActivity extends AppCompatActivity {
             return rootView;
         }
     }
-//    Todo(10) - Definir a funcionalidade do método acima.
-
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {super(fm);}
-
-        @Override
-        public Fragment getItem(int position) {return PlaceholderFragment.newInstance(position + 1);}
-
-        @Override
-        public int getCount() {return 4;}
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "Hoje";
-                case 1:
-                    return "Semana";
-                case 2:
-                    return "Mês";
-                case 3:
-                    return "Organizar";
-            }return null;
-        }
-    }
-//    Função para definir o menu de abas.
 
     private void prepareCards(){
-
         Card a = new Card("Eletromag", "Estudar");
         cardList.add(a);
-
-
-
-
 
         cardAdapter.notifyDataSetChanged();
     }
